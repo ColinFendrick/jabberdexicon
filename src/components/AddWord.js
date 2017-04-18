@@ -4,7 +4,7 @@ import styles from '../styles/AddWord.scss'
 class AddWord extends Component {
   _submit = e => {
     e.preventDefault()
-    console.log(this.refs.newTerm.value, this.refs.newDef.value)
+    this.props.addWord(this.refs.newTerm.value, this.refs.newDef.value)
   }
 
   render () {
