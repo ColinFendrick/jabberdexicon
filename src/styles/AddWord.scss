@@ -1,0 +1,14 @@
+.addWord {
+  display: flex;
+  flex-direction: column;
+}
+
+.newTerm {
+  width: 150px;
+  font-size: 1.2em;
+}
+
+.newDefinition {
+  height: 200px;
+  font-size: 2em;
+}
