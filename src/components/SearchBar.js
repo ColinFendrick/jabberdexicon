@@ -7,9 +7,13 @@ class SearchBar extends Component {
     this.props.searchWord(this.refs.searchText.value)
   }
 
+  _focus = (e) => {
+    e.target.setSelectionRange(0, e.target.value.length)
+  }
+
   render () {
     return <form onSubmit={this._submit} className={styles.SearchBar}>
-      <input className={styles.searchText} type='text' ref='searchText' defaultValue='Search for words!' />
+      <input onFocus={this._focus} className={styles.searchText} type='text' ref='searchText' defaultValue='Search for words!' />
       <input type='submit' value='Search' />
     </form>
   }

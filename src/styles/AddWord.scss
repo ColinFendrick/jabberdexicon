@@ -1,14 +1,25 @@
 .addWord {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .newTerm {
   width: 150px;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
 
 .newDefinition {
   height: 200px;
-  font-size: 2em;
+  font-size: 1.3em;
+  margin: 10px 0;
+  width: 300px;
+}
+
+.submitNewWord {
+  width: 100px;
+  background-color: #fff;
+  border-radius: 15px;
 }

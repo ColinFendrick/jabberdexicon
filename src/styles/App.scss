@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  > h1 {
+    text-decoration: overline underline;
+    font-size: 2em;
+    color: rgb(10, 11, 10);
+    text-shadow: 1px 0 1px black;
+  }
+
+}

@@ -7,11 +7,16 @@ class AddWord extends Component {
     this.props.addWord(this.refs.newTerm.value, this.refs.newDef.value)
   }
 
+  _focus = (e) => {
+    e.target.setSelectionRange(0, e.target.value.length)
+  }
+
   render () {
     return <form onSubmit={this._submit} className={styles.addWord}>
-      <input type='text' ref='newTerm' defaultValue='New Term' className={styles.newTerm} />
-      <input type='text' ref='newDef' defaultValue='New Definition' className={styles.newDefinition} />
-      <input type='submit' value='Add a new word' />
+      <h3>Add your own word!</h3>
+      <input onFocus={this._focus} type='text' ref='newTerm' defaultValue='New Term' className={styles.newTerm} />
+      <textarea onFocus={this._focus} type='text' ref='newDef' defaultValue='New Definition' className={styles.newDefinition} />
+      <input type='submit' value='Add a new word' className={styles.submitNewWord} />
     </form>
   }
 }
