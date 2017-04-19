@@ -20,7 +20,7 @@ class BrowseLetter extends Component {
 
   render () {
     const filtered = this.state.active.filter(item => {
-      if (this.props.match.params.letter === '0') {
+      if (this.props.match.params.letter === 'numbers') {
         return item.term.match(/^\d/)
       } else {
         return item.term[0].toLowerCase() === this.props.match.params.letter
@@ -34,7 +34,7 @@ class BrowseLetter extends Component {
     })
 
     return <div className={styles.wordList}>
-      Words that start with
+      Words that start with <strong>{this.props.match.params.letter.toUpperCase()}</strong>
       <ul className={styles.BrowseLetter}>
         {words}
       </ul>

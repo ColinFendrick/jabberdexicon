@@ -17,7 +17,7 @@ class LetterBar extends Component {
     return <ul className={styles.LetterBar}>
       {searchLetters}
       <li>
-        <NavLink to={`/browse/0`}>
+        <NavLink to={`/browse/numbers`}>
         #
       </NavLink>
       </li>
