@@ -7,10 +7,6 @@ class BrowseLetter extends Component {
     active: []
   }
 
-  updateSearch (letter) {
-
-  }
-
   componentDidMount () {
     const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
     window.fetch(url)
@@ -24,16 +20,25 @@ class BrowseLetter extends Component {
 
   render () {
     const filtered = this.state.active.filter(item => {
-      return item.term[0].toLowerCase() === this.props.match.params.letter
+      if (this.props.match.params.letter === '0') {
+        return item.term.match(/^\d/)
+      } else {
+        return item.term[0].toLowerCase() === this.props.match.params.letter
+      }
     })
+
     const words = filtered.map(word => {
       return <li key={word.id}>
-        <NavLink to={`/entry/${word.slug}`}>{word.term}</NavLink>
+        <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
       </li>
     })
-    return <ul className={styles.BrowseLetter}>
-      {words}
-    </ul>
+
+    return <div className={styles.wordList}>
+      Words that start with
+      <ul className={styles.BrowseLetter}>
+        {words}
+      </ul>
+    </div>
   }
 }
 

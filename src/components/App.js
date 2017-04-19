@@ -3,13 +3,13 @@ import { BrowserRouter as Router,
   NavLink,
   Route } from 'react-router-dom'
 import SearchBar from './Searchbar.js'
-import Definition from './Definition.js'
 import AddWord from './AddWord.js'
 import styles from '../styles/App.scss'
 import LetterBar from './LetterBar.js'
 import Home from './Home.js'
 import BrowseLetter from './BrowseLetter.js'
 import ShowWord from './ShowWord.js'
+import ShowSearch from './ShowSearch.js'
 
 class App extends Component {
   state = {
@@ -46,7 +46,7 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/entry/:slug' component={ShowWord} />
         <Route path='/browse/:letter' component={BrowseLetter} />
-        <Definition term={this.state.active.term} definition={this.state.active.definition} />
+        <Route path='/search/:word' component={ShowSearch} />
         <AddWord addWord={this.addWord} />
       </div>
     </Router>

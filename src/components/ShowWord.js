@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from '../styles/ShowWord.scss'
 
 class ShowWord extends Component {
   state = {
@@ -22,8 +23,13 @@ class ShowWord extends Component {
   }
 
   render () {
-    return <div className='ShowWord'>
-      {this.state.active.term}
+    return <div className={styles.ShowWord}>
+      <div className={styles.word}>
+        {this.state.active.term}:
+      </div>
+      <div className={styles.definition}>
+        {this.state.active.definition}
+      </div>
     </div>
   }
 }

@@ -3700,7 +3700,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.x.x, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -4928,20 +4928,6 @@ react-hot-loader@next:
     react-proxy "^3.0.0-alpha.0"
     redbox-react "^1.2.5"
     source-map "^0.4.4"
-
-react-native-searchbar@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-searchbar/-/react-native-searchbar-1.8.0.tgz#d0458d0104fe3c554095beeab0286d96b237736c"
-  dependencies:
-    lodash "^4.16.4"
-    react-native-vector-icons "^3.0.0"
-
-react-native-vector-icons@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-3.0.0.tgz#a2f63757dee4fb89f67eef660e25e86926ae6827"
-  dependencies:
-    lodash "^4.0.0"
-    yargs "^6.3.0"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
@@ -6476,7 +6462,7 @@ yargs@3.29.0, yargs@^3.5.4:
     window-size "^0.1.2"
     y18n "^3.2.0"
 
-yargs@6.4.0, yargs@^6.0.0, yargs@^6.3.0:
+yargs@6.4.0, yargs@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-6.4.0.tgz#816e1a866d5598ccf34e5596ddce22d92da490d4"
   dependencies:
