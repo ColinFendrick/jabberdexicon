@@ -4,11 +4,16 @@
   justify-content: space-around;
   align-items: center;
 
-  > h1 {
+  .topLink,
+  .topLink:link,
+  .topLink:visited,
+  .topLink:focus,
+  .topLink:hover,
+  .topLink:active {
     text-decoration: overline underline;
-    font-size: 2em;
     color: rgb(10, 11, 10);
     text-shadow: 1px 0 1px black;
+    font-size: 2em;
+    margin: 15px 0;
   }
-
 }

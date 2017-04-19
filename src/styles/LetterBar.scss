@@ -1,0 +1,9 @@
+.LetterBar {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    margin: 3px;
+  }
+}

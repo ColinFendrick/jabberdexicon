@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router,
+  NavLink,
+  Route } from 'react-router-dom'
 import SearchBar from './Searchbar.js'
 import Definition from './Definition.js'
 import AddWord from './AddWord.js'
 import styles from '../styles/App.scss'
+import LetterBar from './LetterBar.js'
+import Home from './Home.js'
+import BrowseLetter from './BrowseLetter.js'
+import ShowWord from './ShowWord.js'
 
 class App extends Component {
   state = {
@@ -11,7 +17,7 @@ class App extends Component {
   }
 
   addWord = (newTerm, newDef) => {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=TOKasdf9ha8w4t3hk698asdfmFKJASDFI'
+    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
     window.fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -29,20 +35,17 @@ class App extends Component {
     })
   }
 
-  searchWord = searchTerm => {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=TOKasdf9ha8w4t3hk698asdfmFKJASDFI'
-    window.fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      console.log(data)
-    })
-  }
-
   render () {
     return <Router>
       <div className={styles.App}>
-        <h1>Jabberdexicon</h1>
-        <SearchBar searchWord={this.searchWord} />
+        <NavLink className={styles.topLink} to={`/`}>
+          Jabberdexicon
+        </NavLink>
+        <LetterBar />
+        <SearchBar />
+        <Route exact path='/' component={Home} />
+        <Route path='/entry/:slug' component={ShowWord} />
+        <Route path='/browse/:letter' component={BrowseLetter} />
         <Definition term={this.state.active.term} definition={this.state.active.definition} />
         <AddWord addWord={this.addWord} />
       </div>

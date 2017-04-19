@@ -4,7 +4,6 @@ import styles from '../styles/Searchbar.scss'
 class SearchBar extends Component {
   _submit = e => {
     e.preventDefault()
-    this.props.searchWord(this.refs.searchText.value)
   }
 
   _focus = (e) => {
