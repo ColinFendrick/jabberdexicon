@@ -8,7 +8,7 @@ class LetterBar extends Component {
   render () {
     const searchLetters = this.letters.map((letter, i) => {
       return <li key={i}>
-        <NavLink to={`/browse/${letter}`}>
+        <NavLink to={`/browse/${letter}`} className={styles.letterLinks}>
           {letter.toUpperCase()}
         </NavLink>
       </li>
@@ -17,7 +17,7 @@ class LetterBar extends Component {
     return <ul className={styles.LetterBar}>
       {searchLetters}
       <li>
-        <NavLink to={`/browse/numbers`}>
+        <NavLink to={`/browse/numbers`} className={styles.letterLinks}>
         #
       </NavLink>
       </li>

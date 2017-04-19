@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import styles from '../styles/Searchbar.scss'
-// import { withRouter } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
 
 class SearchBar extends Component {
   state = {
@@ -30,7 +28,7 @@ class SearchBar extends Component {
 
   render () {
     return <form onSubmit={this._submit} className={styles.SearchBar}>
-      <input onFocus={this._focus} className={styles.searchText} type='text' ref='searchText' defaultValue='Search for words!' />
+      <input onFocus={this._focus} className={styles.searchText} type='text' ref='searchText' defaultValue='Search for words' />
       <input type='submit' value='Search' />
     </form>
   }

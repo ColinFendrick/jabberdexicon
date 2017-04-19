@@ -7,3 +7,16 @@
     margin: 3px;
   }
 }
+
+.letterLinks {
+  text-decoration: none;
+  color: rgb(13, 6, 4);
+}
+
+.letterLinks:hover {
+  color: rgb(189, 169, 40);
+}
+
+.letterLinks:active {
+  color: rgb(218, 148, 44);
+}

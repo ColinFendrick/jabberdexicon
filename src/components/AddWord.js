@@ -13,7 +13,7 @@ class AddWord extends Component {
 
   render () {
     return <form onSubmit={this._submit} className={styles.addWord}>
-      <h3>Add your own word!</h3>
+      <h3>Add your own word...</h3>
       <input onFocus={this._focus} type='text' ref='newTerm' defaultValue='New Term' className={styles.newTerm} />
       <textarea onFocus={this._focus} type='text' ref='newDef' defaultValue='New Definition' className={styles.newDefinition} />
       <input type='submit' value='Add a new word' className={styles.submitNewWord} />

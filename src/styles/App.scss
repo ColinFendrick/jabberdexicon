@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(139, 154, 244, 0.51);
 
   .topLink,
   .topLink:link,
@@ -11,7 +12,7 @@
   .topLink:hover,
   .topLink:active {
     text-decoration: overline underline;
-    color: rgb(10, 11, 10);
+    color: rgb(29, 36, 29);
     text-shadow: 1px 0 1px black;
     font-size: 2em;
     margin: 15px 0;

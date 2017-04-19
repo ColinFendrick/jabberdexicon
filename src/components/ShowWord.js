@@ -23,7 +23,7 @@ class ShowWord extends Component {
     this.updateWord(this.props.match.params.slug)
   }
 
-  _delete = e => {
+  _delete = () => {
     const url = `https://jabberdexicon.herokuapp.com/entries/${this.state.active.slug}?access_token=example`
     window.fetch(url, {
       method: 'DELETE',

@@ -34,7 +34,7 @@ class BrowseLetter extends Component {
     })
 
     return <div className={styles.wordList}>
-      Words that start with <strong>{this.props.match.params.letter.toUpperCase()}</strong>
+      Words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong>
       <ul className={styles.BrowseLetter}>
         {words}
       </ul>

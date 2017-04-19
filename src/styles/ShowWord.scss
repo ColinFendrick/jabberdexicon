@@ -17,5 +17,11 @@
 }
 
 .deleteButton {
-  background-color: green;
+  width: 100px;
+  background-color: rgb(15, 215, 215);
+  border-radius: 15px;
+}
+
+.deleteButton:hover {
+  background-color: rgb(230, 57, 57);
 }
