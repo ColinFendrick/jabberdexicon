@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router,
   NavLink,
-  Route,
-  Switch } from 'react-router-dom'
+  Route } from 'react-router-dom'
 import SearchBar from './Searchbar.js'
 import AddWord from './AddWord.js'
 import styles from '../styles/App.scss'
@@ -12,6 +11,7 @@ import BrowseLetter from './BrowseLetter.js'
 import ShowWord from './ShowWord.js'
 import ShowSearch from './ShowSearch.js'
 import Footer from './Footer.js'
+import EditWord from './EditWord.js'
 
 class App extends Component {
   _clickAddWord = (e) => {
@@ -31,6 +31,7 @@ class App extends Component {
         <Route path='/browse/:letter' component={BrowseLetter} />
         <Route path='/search/:word' component={ShowSearch} />
         <Route path='/addword' component={AddWord} />
+        <Route path='/edit/:slug' component={EditWord} />
         <Footer />
       </div>
     </Router>

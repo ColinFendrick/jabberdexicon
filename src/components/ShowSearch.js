@@ -8,7 +8,7 @@ class ShowSearch extends Component {
   }
 
   componentDidMount () {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
+    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=vorpal'
     window.fetch(url)
     .then(r => r.json())
     .then(data => {

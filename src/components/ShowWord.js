@@ -9,7 +9,7 @@ class ShowWord extends Component {
 
   updateWord (slug) {
     this.setState({active: []})
-    const url = `https://jabberdexicon.herokuapp.com/entries/${slug}?access_token=example`
+    const url = `https://jabberdexicon.herokuapp.com/entries/${slug}?access_token=vorpal`
     window.fetch(url)
     .then(r => r.json())
     .then(data => {
@@ -23,8 +23,12 @@ class ShowWord extends Component {
     this.updateWord(this.props.match.params.slug)
   }
 
+  _edit = () => {
+    this.props.history.push(`/edit/${this.props.match.params.slug}`)
+  }
+
   _delete = () => {
-    const url = `https://jabberdexicon.herokuapp.com/entries/${this.state.active.slug}?access_token=example`
+    const url = `https://jabberdexicon.herokuapp.com/entries/${this.state.active.slug}?access_token=vorpal`
     window.fetch(url, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
@@ -33,6 +37,10 @@ class ShowWord extends Component {
 
   render () {
     return <div>
+      <div className={styles.editButton}>
+        <span onClick={this._edit}>pencil</span>
+        {/* <span className='fa fa-p=pencil fa-5x logoLink' aria-hidden='true' onClick={this._edit} /> */}
+      </div>
       <div className={styles.ShowWord}>
         <div className={styles.word}>
           {this.state.active.term}:
@@ -42,7 +50,7 @@ class ShowWord extends Component {
         </div>
       </div>
       <NavLink to='/'>
-        <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete this entry' />
+        <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
       </NavLink>
     </div>
   }

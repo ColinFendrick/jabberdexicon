@@ -10,7 +10,7 @@ class Footer extends Component {
 
   render () {
     return <footer className={styles.Footer}>
-      <input type='submit' defaultValue='+' onClick={this._submit} />
+      <input type='submit' defaultValue='+' onClick={this._submit} className={styles.addButton} />
     </footer>
   }
 }

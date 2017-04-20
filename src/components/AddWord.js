@@ -23,8 +23,6 @@ class AddWord extends Component {
   _submit = e => {
     e.preventDefault()
     this.addWord(this.refs.newTerm.value, this.refs.newDef.value)
-    // this.refs.newTerm.value = 'New Term'
-    // this.refs.newDef.value = 'New Definition'
     this.props.history.push('/')
   }
 

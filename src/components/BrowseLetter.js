@@ -8,7 +8,7 @@ class BrowseLetter extends Component {
   }
 
   componentDidMount () {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
+    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=vorpal'
     window.fetch(url)
     .then(r => r.json())
     .then(data => {
@@ -28,9 +28,13 @@ class BrowseLetter extends Component {
     })
 
     const words = filtered.map(word => {
-      return <li key={word.id}>
-        <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
-      </li>
+      if (filtered) {
+        return <li key={word.id}>
+          <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
+        </li>
+      } else {
+        return <div>shit</div>
+      }
     })
 
     return <div className={styles.wordList}>
