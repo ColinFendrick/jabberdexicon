@@ -4,7 +4,8 @@ import styles from '../styles/Home.scss'
 class Home extends Component {
   render () {
     return <div className={styles.Home}>
-      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTanqbeK5pnOIecE78mIjYDOfY4uFTtqKMihjP-Jv3TcXyfnsd_YA' />
+      <img src='https://s-media-cache-ak0.pinimg.com/originals/fb/e3/c2/fbe3c28e7beebd2ae984febc3191310d.png' />
+      <p>Welcome to the Future</p>
     </div>
   }
 }

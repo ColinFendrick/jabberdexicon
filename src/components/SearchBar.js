@@ -3,15 +3,12 @@ import { withRouter, Route } from 'react-router-dom'
 import styles from '../styles/Searchbar.scss'
 
 class SearchBar extends Component {
-  state = {}
+  state = {
+    input: null
+  }
 
-  updateState = () => {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
-    window.fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      this.setState({ data })
-    })
+  updateState = (query) => {
+    this.setState({input: query})
   }
 
   _change = e => {
@@ -19,6 +16,7 @@ class SearchBar extends Component {
     const query = this.refs.query.value
     const path = query.length > 0 ? `/search/${query}` : '/'
     this.props.history.push(path)
+    this.updateState(query)
   }
 
   _submit = e => {
@@ -32,7 +30,7 @@ class SearchBar extends Component {
     e.target.setSelectionRange(0, e.target.value.length)
   }
 
-  showSearchText = () => <p className={styles.searchingText}>Searching for '{this.refs.query.value}'</p>
+  showSearchText = () => <p className={styles.searchingText}>Searching for <span className={styles.searchingWords}>{this.state.input}</span></p>
 
   render () {
     return <div>
