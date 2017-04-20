@@ -18,8 +18,8 @@ class LetterBar extends Component {
       {searchLetters}
       <li>
         <NavLink to={`/browse/numbers`} className={styles.letterLinks}>
-        #
-      </NavLink>
+          #
+        </NavLink>
       </li>
     </ul>
   }
