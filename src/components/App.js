@@ -11,6 +11,7 @@ import Home from './Home.js'
 import BrowseLetter from './BrowseLetter.js'
 import ShowWord from './ShowWord.js'
 import ShowSearch from './ShowSearch.js'
+import Footer from './Footer.js'
 
 class App extends Component {
   _clickAddWord = (e) => {
@@ -29,12 +30,8 @@ class App extends Component {
         <Route path='/entry/:slug' component={ShowWord} />
         <Route path='/browse/:letter' component={BrowseLetter} />
         <Route path='/search/:word' component={ShowSearch} />
-        <Switch>
-          <Route path='/addword' component={AddWord} />
-        </Switch>
-        <footer>
-          <input type='submit' value='Add Word' onClick={this._clickAddWord} />
-        </footer>
+        <Route path='/addword' component={AddWord} />
+        <Footer />
       </div>
     </Router>
   }

@@ -17,19 +17,15 @@ class AddWord extends Component {
           'definition': newDef
         }
       })
-    }).then(r => r.json())
-    .then(data => {
-      this.setState({
-        active: data
-      })
     })
   }
 
   _submit = e => {
     e.preventDefault()
     this.addWord(this.refs.newTerm.value, this.refs.newDef.value)
-    this.refs.newTerm.value = 'New Term'
-    this.refs.newDef.value = 'New Definition'
+    // this.refs.newTerm.value = 'New Term'
+    // this.refs.newDef.value = 'New Definition'
+    this.props.history.push('/')
   }
 
   _focus = (e) => {
