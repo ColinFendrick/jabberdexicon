@@ -3,7 +3,7 @@ import styles from '../styles/AddWord.scss'
 
 class AddWord extends Component {
   state = {
-    active: {}
+    active: []
   }
 
   addWord = (newTerm, newDef) => {
@@ -17,13 +17,20 @@ class AddWord extends Component {
           'definition': newDef
         }
       })
+    }).then(r => r.json())
+    .then(data => {
+      if (data.term[0] === 'has already been taken') {
+        window.alert(`${newTerm} has already been made`)
+      } else {
+        window.alert(`${newTerm} was created successfully`)
+        this.props.history.push(`/entry/${data.slug}`)
+      }
     })
   }
 
   _submit = e => {
     e.preventDefault()
     this.addWord(this.refs.newTerm.value, this.refs.newDef.value)
-    this.props.history.push('/')
   }
 
   _focus = (e) => {

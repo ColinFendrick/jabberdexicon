@@ -24,6 +24,7 @@ class ShowSearch extends Component {
         return item.term.toLowerCase().includes(this.props.match.params.word.toLowerCase())
       }
     })
+
     const words = filtered.map(word => {
       return <li key={word.id}>
         <NavLink to={`/entry/${word.slug}`} className={styles.searchLinks}>{word.term}</NavLink>

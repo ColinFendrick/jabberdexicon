@@ -44,9 +44,10 @@
   i {
     width: 1px;
     height: 1px;
+    transition: color 300ms ease;
 
     &:hover {
-      color: rgb(224, 206, 135);
+      color: rgb(205, 93, 21);
     }
 }
 }

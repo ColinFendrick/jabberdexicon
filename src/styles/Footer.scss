@@ -3,8 +3,11 @@
   padding-left: 380px;
 }
 
-.addButton {
-  background-color: rgb(219, 225, 242);
-  border-radius: 7px;
+i {
   font-size: 1em;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: rgb(205, 93, 21);
+  }
 }

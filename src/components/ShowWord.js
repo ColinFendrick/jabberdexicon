@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styles from '../styles/ShowWord.scss'
-import { NavLink } from 'react-router-dom'
 
 class ShowWord extends Component {
   state = {
@@ -28,11 +27,14 @@ class ShowWord extends Component {
   }
 
   _delete = () => {
-    const url = `https://jabberdexicon.herokuapp.com/entries/${this.state.active.slug}?access_token=vorpal`
-    window.fetch(url, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' }
-    }).then(this.setState({active: {}}))
+    if (window.confirm('Are you sure?')) {
+      const url = `https://jabberdexicon.herokuapp.com/entries/${this.state.active.slug}?access_token=vorpal`
+      window.fetch(url, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+      }).then(this.setState({active: {}}))
+      .then(this.props.history.push('/'))
+    }
   }
 
   render () {
@@ -48,9 +50,7 @@ class ShowWord extends Component {
           <div dangerouslySetInnerHTML={{__html: `${this.state.active.formatted_definition}`}} />
         </div>
       </div>
-      <NavLink to='/'>
-        <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
-      </NavLink>
+      <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
     </div>
   }
 }

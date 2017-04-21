@@ -10,7 +10,7 @@ class Footer extends Component {
 
   render () {
     return <footer className={styles.Footer}>
-      <input type='submit' defaultValue='+' onClick={this._submit} className={styles.addButton} />
+      <i type='submit' defaultValue='+' onClick={this._submit} className='fa fa-plus' aria-hidden='true' />
     </footer>
   }
 }
