@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import styles from '../styles/EditWord.scss'
 
 class EditWord extends Component {
-  state = {
-    active: {}
-  }
+  state = {}
 
   slug = this.props.match.params.slug
 
@@ -14,7 +12,7 @@ class EditWord extends Component {
     .then(r => r.json())
     .then(data => {
       this.setState({
-        active: data
+        ...data
       })
     })
   }
@@ -42,16 +40,20 @@ class EditWord extends Component {
     e.target.setSelectionRange(0, e.target.value.length)
   }
 
-  render () {
-    const origDef = () => <div dangerouslySetInnerHTML={{__html: `${this.state.active.formatted_definition}`}} />
+  _change = () => {
+    this.setState({
+      definition: this.refs.updatedDef.value
+    })
+  }
 
+  render () {
     return <div className={styles.EditWordAll}>
       <p>Edit this word...</p>
       <form onSubmit={this._submit} className={styles.EditWord}>
         <div className={styles.word}>
-          {this.state.active.term}:
+          {this.state.term}:
         </div>
-        <textarea onFocus={this._focus} type='text' ref='updatedDef' defaultValue={origDef} className={styles.definition} />
+        <textarea onFocus={this._focus} onChange={this._change} type='text' ref='updatedDef' value={this.state.definition} className={styles.definition} />
         <input type='submit' value='Update Definition' className={styles.updateButton} />
       </form>
     </div>
