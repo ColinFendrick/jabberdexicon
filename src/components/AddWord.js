@@ -20,7 +20,7 @@ class AddWord extends Component {
     }).then(r => r.json())
     .then(data => {
       if (data.term[0] === 'has already been taken') {
-        window.alert(`${newTerm} has already been made`)
+        window.alert(`${newTerm} already exists!`)
       } else {
         window.alert(`${newTerm} was created successfully`)
         this.props.history.push(`/entry/${data.slug}`)
