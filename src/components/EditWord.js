@@ -51,13 +51,10 @@ class EditWord extends Component {
       <form onSubmit={this._submit} className={styles.EditWord}>
         <div className={styles.word}>
           {this.state.active.term}:
-      </div>
+        </div>
         <textarea onFocus={this._focus} type='text' ref='updatedDef' defaultValue={origDef} className={styles.definition} />
         <input type='submit' value='Update Definition' className={styles.updateButton} />
       </form>
-      {/*  */}
-      <div dangerouslySetInnerHTML={{__html: `${this.state.active.formatted_definition}`}} />
-      {/*  */}
     </div>
   }
 }
