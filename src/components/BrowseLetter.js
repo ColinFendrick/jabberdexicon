@@ -36,11 +36,13 @@ class BrowseLetter extends Component {
         </li>
       } else {
         //
-        console.log('hey')
         return <div>
           <p>Currently no words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong></p>
           <NavLink to='/'>
             Go home?
+          </NavLink>
+          <NavLink to='/addword'>
+            Add some?
           </NavLink>
         </div>
       }

@@ -3,20 +3,11 @@ import { withRouter, Route } from 'react-router-dom'
 import styles from '../styles/Searchbar.scss'
 
 class SearchBar extends Component {
-  state = {
-    input: null
-  }
-
-  updateState = (query) => {
-    this.setState({input: query})
-  }
-
   _change = e => {
     e.preventDefault()
     const query = this.refs.query.value
     const path = query.length > 0 ? `/search/${query}` : '/'
     this.props.history.push(path)
-    this.updateState(query)
   }
 
   _focus = e => {

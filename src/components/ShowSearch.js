@@ -26,9 +26,21 @@ class ShowSearch extends Component {
     })
 
     const words = filtered.map(word => {
-      return <li key={word.id}>
-        <NavLink to={`/entry/${word.slug}`} className={styles.searchLinks}>{word.term}</NavLink>
-      </li>
+      if (filtered) {
+        return <li key={word.id}>
+          <NavLink to={`/entry/${word.slug}`} className={styles.searchLinks}>{word.term}</NavLink>
+        </li>
+      } else {
+        return <div>
+          <p>Currently no words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong></p>
+          <NavLink to='/'>
+            Go home?
+          </NavLink>
+          <NavLink to='/addword'>
+            Add some?
+          </NavLink>
+        </div>
+      }
     })
 
     return <ul className={styles.ShowSearch}>
