@@ -55,9 +55,9 @@ class EditWord extends Component {
         <textarea onFocus={this._focus} type='text' ref='updatedDef' defaultValue={origDef} className={styles.definition} />
         <input type='submit' value='Update Definition' className={styles.updateButton} />
       </form>
-      {origDef}
+      {/*  */}
       <div dangerouslySetInnerHTML={{__html: `${this.state.active.formatted_definition}`}} />
-
+      {/*  */}
     </div>
   }
 }

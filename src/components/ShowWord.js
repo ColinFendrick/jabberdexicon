@@ -38,8 +38,7 @@ class ShowWord extends Component {
   render () {
     return <div>
       <div className={styles.editButton}>
-        <span onClick={this._edit}>pencil</span>
-        {/* <span className='fa fa-p=pencil fa-5x logoLink' aria-hidden='true' onClick={this._edit} /> */}
+        <i onClick={this._edit} className='fa fa-pencil fa-2x' aria-hidden='true' />
       </div>
       <div className={styles.ShowWord}>
         <div className={styles.word}>

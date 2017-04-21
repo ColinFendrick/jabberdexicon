@@ -1,7 +1,11 @@
+
 .ShowWord {
   text-align: left;
-  width: 90vh;
+  width: 80%;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .word {
@@ -33,9 +37,16 @@
 
 .editButton {
   margin: 20px 0 3px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
 
-  span:hover {
-    color: rgb(224, 206, 135);
-  }
+  i {
+    width: 1px;
+    height: 1px;
+
+    &:hover {
+      color: rgb(224, 206, 135);
+    }
+}
 }
