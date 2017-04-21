@@ -10,13 +10,12 @@ class EditWord extends Component {
 
   componentDidMount () {
     const url = `https://jabberdexicon.herokuapp.com/entries/${this.slug}?access_token=vorpal`
-    console.log(url)
     window.fetch(url)
     .then(r => r.json())
     .then(data => {
       this.setState({
         active: data
-      }, console.log(this.state.active))
+      })
     })
   }
 
