@@ -22,6 +22,8 @@ class BrowseLetter extends Component {
     const filtered = this.state.active.filter(item => {
       if (this.props.match.params.letter === 'numbers') {
         return item.term.match(/^\d/)
+      } else if (this.props.match.params.letter === 'all') {
+        return item.term
       } else {
         return item.term[0].toLowerCase() === this.props.match.params.letter
       }
@@ -33,6 +35,7 @@ class BrowseLetter extends Component {
           <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
         </li>
       } else {
+        //
         return <div>shit</div>
       }
     })

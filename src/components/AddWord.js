@@ -7,7 +7,7 @@ class AddWord extends Component {
   }
 
   addWord = (newTerm, newDef) => {
-    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=example'
+    const url = 'https://jabberdexicon.herokuapp.com/entries?access_token=vorpal'
     window.fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
