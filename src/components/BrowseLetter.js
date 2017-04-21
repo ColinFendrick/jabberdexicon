@@ -30,29 +30,31 @@ class BrowseLetter extends Component {
     })
 
     const words = filtered.map(word => {
-      if (filtered) {
-        return <li key={word.id}>
-          <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
-        </li>
-      } else {
-        //
-        return <div>
-          <p>Currently no words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong></p>
-          <NavLink to='/'>
-            Go home?
-          </NavLink>
-          <NavLink to='/addword'>
-            Add some?
-          </NavLink>
-        </div>
-      }
+      return <li key={word.id}>
+        <NavLink to={`/entry/${word.slug}`} className={styles.word}>{word.term}</NavLink>
+      </li>
     })
+
+    let noWords
+
+    if (filtered.length === 0) {
+      noWords = <div>
+        <p>Currently no words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong></p>
+        <NavLink to='/'>
+          Go home?
+        </NavLink>
+        <NavLink to='/addword'>
+          Add some words?
+        </NavLink>
+      </div>
+    }
 
     return <div className={styles.wordList}>
       <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong>
       <ul className={styles.BrowseLetter}>
         {words}
       </ul>
+      {noWords}
     </div>
   }
 }
