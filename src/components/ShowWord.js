@@ -50,7 +50,11 @@ class ShowWord extends Component {
           <div dangerouslySetInnerHTML={{__html: `${this.state.active.formatted_definition}`}} />
         </div>
       </div>
-      <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
+      <div className={styles.buttons}>
+        <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
+        <i className='fa fa-facebook fa-2x' aria-hidden='true' />
+        <i className='fa fa-twitter fa-2x' aria-hidden='true' />
+      </div>
     </div>
   }
 }

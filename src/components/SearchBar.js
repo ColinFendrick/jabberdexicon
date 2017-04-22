@@ -3,9 +3,8 @@ import { withRouter, Route } from 'react-router-dom'
 import styles from '../styles/Searchbar.scss'
 
 class SearchBar extends Component {
-  state = {
-    query: ''
-  }
+  state = {}
+
   _change = e => {
     e.preventDefault()
     const query = this.refs.query.value
@@ -27,7 +26,10 @@ class SearchBar extends Component {
       <form onChange={this._change} className={styles.SearchBar}>
         <input onFocus={this._focus} className={styles.searchText} type='search' ref='query' defaultValue='Search for words' />
       </form>
-      <Route path='/search/' render={this.showSearchText} />
+      <div className={styles.searchResults}>
+        <Route path='/search/' render={this.showSearchText} />
+        <i className='fa fa-link fa-2px' aria-hidden='true' />
+      </div>
     </div>
   }
 }
