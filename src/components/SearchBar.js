@@ -28,7 +28,6 @@ class SearchBar extends Component {
       </form>
       <div className={styles.searchResults}>
         <Route path='/search/' render={this.showSearchText} />
-        <i className='fa fa-link fa-2px' aria-hidden='true' />
       </div>
     </div>
   }

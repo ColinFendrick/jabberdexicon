@@ -12,3 +12,8 @@
 .searchLinks:hover {
   color: rgb(210, 136, 48);
 }
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+}

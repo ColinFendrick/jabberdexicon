@@ -36,12 +36,14 @@ class ShowSearch extends Component {
     if (filtered.length === 0) {
       noWords = <div>
         <p> No words match your search</p>
-        <NavLink to='/'>
-          Go home?
-        </NavLink>
-        <NavLink to='/addword'>
-          Add some words?
-        </NavLink>
+        <div className={styles.noResults}>
+          <NavLink to='/'>
+            Go home?
+          </NavLink>
+          <NavLink to='/addword'>
+            Add some words?
+          </NavLink>
+        </div>
       </div>
     }
 

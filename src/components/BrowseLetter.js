@@ -41,12 +41,13 @@ class BrowseLetter extends Component {
     if (filtered.length === 0) {
       noWords = <div>
         <p>Currently no words that start with <strong className={styles.selectedLetter}>{this.props.match.params.letter.toUpperCase()}</strong></p>
-        <NavLink to='/'>
+        <div className={styles.noResults}>
+          <NavLink to='/'>
           Go home?
         </NavLink>
-        <NavLink to='/addword'>
+          <NavLink to='/addword'>
           Add some words?
-        </NavLink>
+        </NavLink></div>
       </div>
     }
 

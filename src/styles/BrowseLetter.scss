@@ -18,3 +18,8 @@
 .selectedLetter {
   color: rgb(226, 88, 20);
 }
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+}

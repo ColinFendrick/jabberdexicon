@@ -1,6 +1,10 @@
 .SearchBar {
   display: flex;
   margin-top: 33px;
+
+  i {
+    margin: 0 10px;
+  }
 }
 
 .searchText {
@@ -15,8 +19,4 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  i {
-    padding: 10px;
-  }
 }
