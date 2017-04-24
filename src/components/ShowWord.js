@@ -58,7 +58,7 @@ class ShowWord extends Component {
         <input className={styles.deleteButton} onClick={this._delete} type='submit' value='Delete' />
         {/* <i className='fa fa-facebook fa-2x' onClick={this._link} aria-hidden='true' />
         <i className='fa fa-twitter fa-2x' aria-hidden='true' /> */}
-      </div>''
+      </div>
     </div>
   }
 }
